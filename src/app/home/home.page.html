@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Bienvenido a TeLlevo!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div id="container">
+        <ion-card>
+      <!-- ANGULAR MATERIAL -->
+       <div>
+         <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+       </div>
+       <ion-card-header>
+       
+         <ion-avatar id="icono">
+           <img alt="appLogo"
+             src="/assets/logoapp.png" />
+         </ion-avatar><br>
+       </ion-card-header>
+      <ion-card-content>
+        <ion-list id="cardlist">
+
+          <ion-item>
+            <ion-input [(ngModel)]="user.usuario" label="Nombre Usuario" labelPlacement="floating"
+              placeholder="Ingrese su Usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="user.password" label="Contraseña" type="password" labelPlacement="floating"
+              placeholder="Ingrese su Contraseña">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-toggle aria-label="Success toggle" color="success" [checked]="true">Recuerdame</ion-toggle>
+          </ion-item><br>
+          <ion-item>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </ion-item>
+          <ion-button (click)="enviarInformacion()" size="small" shape="round">Conectar</ion-button><br>
+          <br>
+          <ion-button id="open-modal" shape="round" size="small">
+            Registrarse
+          </ion-button><br>
+          <!--  
+          <ion-button [routerLink]="['/login']" shape="round" size="small">
+            Redirect
+          </ion-button><br>
+          -->
+          <ion-button [routerLink]="['/api-test']" size="small" shape="round">
+            API Module
+          </ion-button>
+          <div>
+
+            <h1>{{mensaje}}</h1><br>
+          </div>
+        </ion-list>
+      </ion-card-content>
+      <div>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+    </ion-card>
+
+
+    <ion-alert trigger="present-alert" header="Registro" subHeader="{{mensaje}}" [buttons]="alertButtons"></ion-alert>
+    <!-- Modal Section Begin -->
+    <ion-modal trigger="open-modal">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Salir</ion-button>
+            </ion-buttons>
+            <ion-title>Registro</ion-title>
+            <ion-buttons slot="end" id="present-alert">
+              <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-input [(ngModel)]="user.usuario" label="Nombre Usuario" labelPlacement="floating"
+              placeholder="Ingrese su Usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="user.password" label="Contraseña" type="password" labelPlacement="floating"
+              placeholder="Ingrese su Contraseña"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{estado}}</ion-label>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+    <!-- Modal Section End -->
+  </div>
+</ion-content>
