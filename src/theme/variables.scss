@@ -74,6 +74,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+   /** myColor de la APP **/
+   --ion-color-mycolor: #222428;
+   --ion-color-mycolor-rgb: 34, 36, 40;
+   --ion-color-mycolor-contrast: #ffffff;
+   --ion-color-mycolor-contrast-rgb: 255, 255, 255;
+   --ion-color-mycolor-shade: #1e2023;
+   --ion-color-mycolor-tint: #383a3e;
 }
 
 @media (prefers-color-scheme: dark) {
