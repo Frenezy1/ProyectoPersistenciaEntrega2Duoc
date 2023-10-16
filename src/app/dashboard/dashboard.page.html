@@ -40,16 +40,16 @@
       <ion-card-content>
         <ion-list id="cardlist">
           <ion-item>
-            <ion-input label="¿A dónde vas?" labelPlacement="floating" placeholder="Ingrese dirección">
+            
+            <ion-input [(ngModel)]="direccion_viaje.direccion" label="¿A dónde vas?" labelPlacement="floating" placeholder="Ingrese dirección">
             </ion-input>
           </ion-item>
           <ion-item>
-            <ion-input label="¿A qué hora?" labelPlacement="floating" placeholder="Ingrese hora" type="password">
+            <ion-input [(ngModel)]="direccion_viaje.hora" label="¿A qué hora?" labelPlacement="floating" placeholder="Ingrese hora" >
             </ion-input>
           </ion-item><br>
          
-          <ion-button  shape="round" size="small">{{this.mensaje_general}}</ion-button><br>
-         
+          <ion-button (click)="validarInfo()" shape="round" size="small">{{this.mensaje_general}}</ion-button><br>
         </ion-list>
       </ion-card-content>
     </ion-card>

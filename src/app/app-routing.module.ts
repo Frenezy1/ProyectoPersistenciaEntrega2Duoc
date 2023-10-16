@@ -31,9 +31,15 @@ const routes: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
+    path: 'pagina-viaje',
+    loadChildren: () => import('./pagina-viaje/pagina-viaje.module').then( m => m.PaginaViajePageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./error-page/error-page.module').then(m => m.ErrorPagePageModule)
   },
+  
+
 
 
 ];

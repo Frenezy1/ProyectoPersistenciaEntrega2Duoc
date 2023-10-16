@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +18,12 @@ export class DashboardPage implements OnInit {
     password: "",
     correo: "",
     fono: ""
+  }
+
+  direccion_viaje = {
+    direccion: "",
+    valor: "$3.490",
+    hora: ""
   }
 
   
@@ -58,4 +64,26 @@ export class DashboardPage implements OnInit {
     this.mensaje_general = this.mensaje_conductor;
   }
 
+  // Validacion y match up de credenciales ingresadas
+  validarInfo(){
+    
+    // En caso de coincidir las validaciones, empaquetamos los datos ingresados y se lo enviamos al dashboard
+    if((this.direccion_viaje.direccion != " " || this.direccion_viaje.direccion != null)
+         ){
+   
+    //Se crea el navigationExtras para enviar el paquete de informacion
+    //A la siguiente pagina que lo deba recibir
+    //Para ello empaquetamos nuestra informacion en la variable state
+    //que esta incluida en el navigationExtras
+      const navigationExtras: NavigationExtras = {
+        state: { direccion_viaje: this.direccion_viaje }
+      }
+      //Enrutamos y enviamos a nuestro nuevo destino
+      this.router.navigate(['/pagina-viaje'], navigationExtras);
+    }
+
+  else{
+    console.log("Error qlo");
+  }
+}
 }
