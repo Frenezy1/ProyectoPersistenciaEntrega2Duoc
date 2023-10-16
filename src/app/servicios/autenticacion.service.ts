@@ -52,6 +52,7 @@ export class AutenticacionService {
   //Adicionalmente una promise en JS o TS es una operacion que aun no se completa pero que lo hara en el futuro 
   //Estas promesas son la forma en que el codigo puede manejar ciertas operaciones con poosibiliad de fallo (Similar a trabajar con try/Catch)
   // Una promise puede tener los sig estados : Pendiente || Cumplida || Rechazada
+  
   async login(username: string, password: string): Promise<boolean> {
     //Llamamos el arreglo desde el Storage
     const users: User[] = (await this.local.get('users')) || [];

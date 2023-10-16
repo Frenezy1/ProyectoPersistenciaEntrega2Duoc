@@ -37,9 +37,9 @@ export class HomePage {
         let navigationExtras: NavigationExtras = {
           state: { user: this.user }
         }
-        this.router.navigate(['/login'], navigationExtras);
+        this.router.navigate(['/dashboard'], navigationExtras); // '/login' originalmente
       } else {
-        this.mensaje = "Debe ingresar sus credenciales";
+        this.mensaje = "Credenciales ingresadas no válidas"; // "Debe ingresar sus credenciales" originalmente
       }
     });
   }
