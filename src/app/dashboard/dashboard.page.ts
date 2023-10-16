@@ -15,7 +15,9 @@ export class DashboardPage implements OnInit {
   
   user = {
     username: "",
-    password: ""
+    password: "",
+    correo: "",
+    fono: ""
   }
 
   
@@ -38,6 +40,8 @@ export class DashboardPage implements OnInit {
         // Aca recibimos y reemplazamos las variables de este user por el recibido en modulo de datos desde user_register.
         this.user.username = state['user'].usuario;
         this.user.password = state['user'].password;
+        this.user.correo = state['user'].correo;
+        this.user.fono = state['user'].fono;
         console.log(this.user); // para confirmar en consola.
       }
       

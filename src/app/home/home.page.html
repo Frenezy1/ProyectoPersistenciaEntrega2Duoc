@@ -42,7 +42,7 @@
           </ion-item>*/-->
           <ion-button (click)="enviarInformacion()" size="small" shape="round">Ingresar</ion-button><br>
           <br>
-          <ion-button id="open-modal" shape="round" size="small">
+          <ion-button id="open-modal" shape="round" size="small"> <!-- Aca abro el Modal de Registro -->
             Registrarse
           </ion-button><br>
           <!--  
@@ -90,6 +90,15 @@
             <ion-input [(ngModel)]="user.password" label="Contraseña" type="password" labelPlacement="floating"
               placeholder="Ingrese su Contraseña"></ion-input>
           </ion-item>
+          <ion-item>
+            <ion-input label="Email" type="email" labelPlacement="floating" placeholder="correo@usuario.cl"  helperText="Debe contener un @ y el dominio."  
+            [(ngModel)]="user.correo"> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Teléfono" type="phone" labelPlacement="floating" placeholder="Ingrese +569 y su teléfono." 
+            [(ngModel)]="user.fono"></ion-input>
+          </ion-item>
+          <!-- Aqui dirá si es existente el usuario o se creó sin problemas -->
           <ion-item>
             <ion-label>{{estado}}</ion-label>
           </ion-item>
