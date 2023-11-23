@@ -42,7 +42,9 @@
           <ion-item>
             
             <ion-input [(ngModel)]="direccion_viaje.direccion" label="¿A dónde vas?" labelPlacement="floating" placeholder="Ingrese dirección">
+              
             </ion-input>
+            <ion-button (click)="irAMapa()">Ir al Mapa</ion-button>
           </ion-item>
           <ion-item>
             <ion-input [(ngModel)]="direccion_viaje.hora" label="¿A qué hora?" labelPlacement="floating" placeholder="Ingrese hora" >

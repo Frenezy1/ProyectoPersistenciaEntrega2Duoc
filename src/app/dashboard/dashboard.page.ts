@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,7 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 })
 export class DashboardPage implements OnInit {
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute) { 
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private navCtrl: NavController) { 
 
 
   }
@@ -85,5 +86,8 @@ export class DashboardPage implements OnInit {
   else{
     console.log("Error qlo");
   }
+}
+irAMapa() {
+  this.navCtrl.navigateForward('/mapa');
 }
 }

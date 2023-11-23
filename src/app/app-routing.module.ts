@@ -35,9 +35,15 @@ const routes: Routes = [
     loadChildren: () => import('./pagina-viaje/pagina-viaje.module').then( m => m.PaginaViajePageModule)
   },
   {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./error-page/error-page.module').then(m => m.ErrorPagePageModule)
   },
+  
+
   
 
 
